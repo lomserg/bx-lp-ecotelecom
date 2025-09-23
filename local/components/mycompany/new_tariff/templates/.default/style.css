@@ -1,0 +1,51 @@
+.choose-tariff_item-green .choose-tariff_item-cinema-text {
+	color: #c1c8c9;
+}
+
+.hidden {
+	display: none !important;
+}
+
+.terms {
+	margin-top: 25px !important;
+}
+
+.filter__title {
+	margin-top: 20px;
+}
+
+.filter__subtitle {
+	margin-top: 60px;
+	font-weight: 400;
+	font-size: 24px;
+}
+
+.filter__form {
+	max-width: 980px;
+	margin: 0 auto;
+}
+
+.image-tariff_pos {
+    margin-top: -90px;
+    margin-right: -64px;
+}
+
+.choose-tariff_item-image img {
+	object-fit: contain;
+	width: auto;
+}
+
+@media (max-width: 1024px) {
+	.filter__subtitle {
+		margin-top: 10px;
+		font-weight: 400;
+		font-size: 16px;
+	}
+	.filter__title {
+		margin-bottom: -20px;
+	}
+}
+
+.terms_item a {
+	display: inline-block;
+}

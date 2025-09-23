@@ -1,0 +1,164 @@
+
+/* tarifs */
+.tarifs-section {
+    background: #f4f4f4;
+
+}
+.tarifs_container {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.tarif-card {
+    /*max-width: 410px;*/
+    background: #fff;
+    border-radius: 2rem; width: 100%;
+    max-width: none;
+}
+
+
+.tarif-name {
+    font-size: 2rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: "Sora", sans-serif;
+}
+
+.tarif-description {
+    font-size: 18px;
+    font-weight: 900;
+    margin-top: 1rem;
+    color: #157361;
+    line-height: 1;
+    font-weight: 800;
+    font-family: "Inter", sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.tarif-price {
+    font-size: 5.5rem;
+    font-family: "Sora", sans-serif;
+    font-weight: 700;
+}
+.tarif-price span {
+    font-size: 1.5rem;
+
+    display: inline-flex;
+    font-weight: 300;
+    margin-left: -14px;
+}
+.tarif_wrapper {
+    padding: 2.65rem 2rem;
+}
+
+.tarif-button {
+    display: inline-block;
+    border-radius: 12px;
+    padding: 13px 62px;
+    outline: none;
+    margin: 3px;
+    color: #fff;
+    border: none;
+    background: #01b4f5;
+    background: linear-gradient(
+            90deg,
+            rgba(1, 180, 245, 1) 0%,
+            rgba(0, 250, 120, 1) 88%
+    );
+    width: 100%;
+}
+
+.tarif_wrapper {
+    padding: 2.65rem 2rem 0 2rem; /* Removed bottom padding */
+}
+
+.tarif-params-wrapper {
+    padding: 2rem 2rem 2.65rem 2rem; /* Removed top padding */
+    height: 250px;
+}
+.section-title {
+    text-align: center;
+    font-size: 36px;
+    padding-top: 2rem;    padding-bottom: 2rem;
+
+
+}
+.tarif-params {
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 10px;
+}
+.tarif-params span {
+    font-size: 1rem;
+    font-weight: 400;
+}
+.tarif-params::before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.285 2.857l-11.418 11.418-4.285-4.285-2.143 2.143 6.428 6.428 13.561-13.561z"/></svg>');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.swiper {
+    padding-bottom: 40px;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+}
+.tarifs-swiper {
+
+    overflow: hidden;
+}
+.tarifs-swiper {
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+/*.swiper-wrapper {*/
+/*    display: flex;*/
+/*}*/
+
+/*.swiper-slide {*/
+/*    box-sizing: border-box;*/
+/*}*/
+/*.swiper-slide {*/
+/*    box-sizing: border-box;*/
+/*    flex-shrink: 0;*/
+/*    margin: 0 !important; !* чтобы убрать отступы *!*/
+/*    padding: 0 !important;*/
+/*    width: auto !important; !* пусть Swiper сам выставляет *!*/
+/*}*/
+/*.tarif-card {*/
+/*    width: 100%;*/
+/*    max-width: none;*/
+/*    height: 100%;*/
+/*}*/
+.tarifs-swiper {
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative; /* обязательно */
+    /*padding: 0 60px;     !* отступы внутри, чтобы кнопки были видны *!*/
+    overflow: hidden;    /* можно оставить, если стрелки внутри padding */
+    height: 600px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: #01b4f5;
+    width: 40px;
+    height: 40px;
+}
+/* Центрируем кнопки навигации по вертикали */
+
+/* При необходимости можно также настроить отступ от краёв */
