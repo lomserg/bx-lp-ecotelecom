@@ -1,12 +1,14 @@
-const allSwipers = []; // массив для хранения всех инстансов
+document.addEventListener("DOMContentLoaded", () => {
+  const tabs = document.querySelectorAll(".tab_btn");
+  const allSwipers = [];
 
-function initSwiperIfReady(container) {
-  if (container.querySelectorAll('.swiper-slide').length === 0) {
-    setTimeout(() => initSwiperIfReady(container), 50);
-    return;
-  }
+  function initSwiperIfReady(container) {
+    // ждем, пока слайды появятся и контейнер видим
+    if (container.offsetParent === null || container.querySelectorAll('.swiper-slide').length === 0) {
+      setTimeout(() => initSwiperIfReady(container), 50);
+      return;
+    }
 
-  try {
     const swiper = new Swiper(container, {
       loop: false,
       grabCursor: true,
@@ -20,39 +22,47 @@ function initSwiperIfReady(container) {
         prevEl: '.tarif-custom-prev',
       },
       breakpoints: {
-        0: { slidesPerView: 1.15 },
+        0: { slidesPerView: 1 },
         550: { slidesPerView: 1.3 },
         768: { slidesPerView: 2.6 },
         991: { slidesPerView: 3 }
       }
     });
 
-    allSwipers.push(swiper); // сохраняем в массив
-    console.log(`Swiper инициализирован для: ${container.className}`);
+    allSwipers.push(swiper);
     return swiper;
-  } catch (error) {
-    console.error('Ошибка инициализации Swiper:', error);
   }
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log('DOM загружен, инициализирую слайдеры...');
-
+  // Инициализация всех слайдеров
   const sliders = document.querySelectorAll('.tarifs__section .swiper');
-  console.log(`Найдено слайдеров: ${sliders.length}`);
+  sliders.forEach(container => initSwiperIfReady(container));
 
-  sliders.forEach((container, index) => {
-    console.log(`Инициализирую слайдер ${index + 1}:`, container.className);
-    initSwiperIfReady(container);
-  });
+  // Функция показа карточек по категории
+  function showCategory(category) {
+    const cards = document.querySelectorAll('.tarif-item');
+    cards.forEach(card => {
+      card.style.display = (card.getAttribute("data-category") === category) ? "block" : "none";
+    });
 
-  // 👉 слушаем переключение табов
-  document.querySelectorAll(".tab_btn").forEach(tab => {
+    // Обновляем только видимые слайдеры
+    setTimeout(() => {
+      allSwipers.forEach(sw => {
+        if (sw.el.offsetParent !== null) sw.update();
+      });
+    }, 50);
+  }
+
+  // Переключение табов
+  tabs.forEach(tab => {
     tab.addEventListener("click", () => {
-      // задержка нужна, чтобы DOM успел перерисоваться
-      setTimeout(() => {
-        allSwipers.forEach(sw => sw.update());
-      }, 100);
+      tabs.forEach(t => t.classList.remove("active"));
+      tab.classList.add("active");
+
+      const category = tab.getAttribute("data-category");
+      showCategory(category);
     });
   });
+
+  // Показываем по умолчанию первую категорию
+  showCategory("internet-tv");
 });

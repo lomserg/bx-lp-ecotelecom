@@ -151,6 +151,7 @@ body {
     font-size: var(--fs-400);
     color: hsl(var(--clr-dark));
     background-color: hsl(var(--clr-white));
+    background-color: hsl(35, 30%, 98.4%);
     line-height: 1.5;
 }
 
@@ -1830,7 +1831,7 @@ input {
 }
 
 .accordion-header {
-    background-color: #f7f7f7;
+    background-color: #fff;
     padding: 15px 20px;
     cursor: pointer;
     position: relative;
@@ -2182,7 +2183,7 @@ input {
 }
 
 .advantages-tv-container img {
-    max-width: var(--bento-card-image-width, 100%);
+    max-width: var(--bento-card-image-width,  57%);
     width: var(--bento-card-image-width, 100%);
     order: var(--bento-card-image-order);
 }
@@ -2370,6 +2371,7 @@ width: 100%;
 
 .advantage-card img {
     align-self: flex-end;
+    width: 50%;
 }
 .advantage-item {
     font-size: 14px;
@@ -2429,6 +2431,23 @@ width: 100%;
     animation: float 10s ease-in-out infinite, spin 30s linear infinite;
     z-index: 4;
     opacity: 0.4;
+}
+
+@media (max-width: 560px) {
+    .anim-1 {
+        width: 45px;
+        height: 46px;
+        top: -3px;
+        left: 33px;
+
+    }
+    .anim-2 {
+        width: 53px;
+        height: 52px;
+        top: 203px;
+        right: 113px;
+        opacity: 1;
+    }
 }
 
 @keyframes key1 {
